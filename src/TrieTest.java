@@ -14,6 +14,7 @@ public class TrieTest {
 		System.out.println("insert <key> <Value>  : insert into tree a key-value pair");
 		System.out.println("get <key> : get the value associated with key");
 		System.out.println("del <key> : del a node with given key");
+		System.out.println("iterate : iterates over all the keys and prints them");
 		System.out.println("quit : quits the execution");
 		System.out.println("=====================================================================================");
 		
@@ -37,6 +38,12 @@ public class TrieTest {
 				}
 				if(trie.get(cmds[1])==null) System.out.println("No such key");
 				else System.out.println(trie.get(cmds[1]));
+			}
+			else if(cmds[0].equals("size")){
+				System.out.println("Size of trie :"+trie.size());
+			}
+			else if(cmds[0].equals("iterate")){
+				trie.iterate();
 			}
 				
 		}
