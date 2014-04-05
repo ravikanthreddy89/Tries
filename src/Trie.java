@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.Stack;
 
 
 public class Trie<Value> implements Iterable{
@@ -46,8 +47,11 @@ public class Trie<Value> implements Iterable{
 	//lets write code to iterate over keys before
 	//going ahead with "Iterator" implementation
 	
-	public void iterate(){
+	public void iterate(){//iterate over all the keys
+		System.out.println("Keys are :");
+		System.out.println("-----------------------");
 		iterate(this.root);
+		System.out.println("-----------------------");
 	}
 	
 	
@@ -87,14 +91,14 @@ public class Trie<Value> implements Iterable{
 
 	private void iterate(Node x){
 		//if(x==null) return;
+		if(x.val !=null) System.out.println("");
 		
 		for(int i=0;i<256;i++){
 			if(x.array[i]!=null){
 				System.out.print(Character.toString((char)i));
 				iterate(x.array[i]);
-				System.out.println("");
-			}
-			
+				//System.out.println("");
+			}			
 		}
 		
 	}
@@ -103,21 +107,29 @@ public class Trie<Value> implements Iterable{
 
 		private String prefix;
 		private Node localRoot;
+		private Stack<Node> stack;
 		
+		private String ret;
 		TrieIterator(Node x, String prefix){
 			this.prefix=prefix;
+			this.stack=new Stack<Node>();
+			this.localRoot=x;
 			
 		}
 		@Override
 		public boolean hasNext() {
 			// TODO Auto-generated method stub
-			return false;
+			return (!stack.isEmpty() || localRoot!=null);
 		}
 
 		@Override
 		public String next() {
 			// TODO Auto-generated method stub
-			return null;
+			String ret=null;
+			while(!this.stack.isEmpty() && localRoot!=null){
+			
+			}
+			return null ;
 		}
 
 		@Override
