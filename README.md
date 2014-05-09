@@ -7,8 +7,12 @@ Implementation of dictionary or key-value table that support "String" keys and g
 
 API
 ===
-put(String key, Value val)
-get(String key)
-conatians(String key)
-keysWithPrefix(String prefix)
-iterator()
+->put(String key, Value val)
+
+->get(String key)
+
+->conatians(String key)
+
+->keysWithPrefix(String prefix)
+
+->iterator()
